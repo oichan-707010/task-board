@@ -10,6 +10,33 @@
 - `src/App.css` — ボード UI のスタイル
 - `src/index.css` — 色トークン（ライト/ダーク）とベーススタイル
 
+## 技術スタック
+
+| 分類 | 使用技術 |
+| --- | --- |
+| UI ライブラリ | React 19（関数コンポーネント + Hooks） |
+| ビルドツール / 開発サーバー | Vite 8（`@vitejs/plugin-react`） |
+| 言語 | JavaScript（JSX、ES Modules）※ TypeScript は未使用 |
+| スタイル | プレーン CSS（CSS 変数による色トークン、ダークモードは `prefers-color-scheme`） |
+| 状態管理 | `useState` / `useEffect` のみ（外部ライブラリなし） |
+| データ保存 | ブラウザの localStorage（バックエンドなし） |
+| Lint | oxlint |
+| CI / ホスティング | GitHub Actions → GitHub Pages（Node.js 24） |
+
+## コンポーネントの命名規約
+
+現在のコードに合わせて、以下の規約で書くこと。
+
+- **コンポーネント名**: PascalCase（例: `App`, `TaskItem`）。`function` 宣言で定義し、`export default` する
+- **ファイル名**: コンポーネント名と同じ PascalCase + `.jsx`（例: `App.jsx`）。スタイルは同名の `.css`（例: `App.css`）をコンポーネント内で import する
+- **配置**: エントリは `src/main.jsx`、ルートは `src/App.jsx`。コンポーネントを分割する場合は `src/components/` に置く
+- **イベントハンドラ・関数**: camelCase の「動詞 + 対象」（例: `addTask`, `toggleTask`, `deleteTask`, `loadTasks`）
+- **state**: 名詞の camelCase で、セッターは `set` + 名前（例: `tasks` / `setTasks`）。真偽値は状態を表す短い名前（例: `done`）
+- **定数**: UPPER_SNAKE_CASE でモジュールのトップレベルに置く（例: `STORAGE_KEY`）
+- **localStorage のキー**: `task-board.` を接頭辞にする（例: `task-board.tasks`）
+- **CSS クラス名**: kebab-case（例: `add-form`, `task-list`）。状態は修飾クラスを追加して表す（例: `task done`）
+- **色**: CSS に直接書かず、`src/index.css` の CSS 変数（例: `--accent`, `--done-text`）を使う。ダークモード用の値も合わせて定義する
+
 ## 開発コマンド
 
 - 依存関係のインストール: `npm install`
@@ -17,10 +44,11 @@
 - ビルド: `npm run build`
 - Lint: `npm run lint`（oxlint）
 
-## デプロイ
+## デプロイ先
+
+https://oichan-707010.github.io/task-board/
 
 - `main` へのプッシュで `.github/workflows/deploy.yml` が GitHub Pages に自動デプロイする
-- 公開URL: https://oichan-707010.github.io/task-board/
 - `vite.config.js` の `base` は `/task-board/`（リポジトリ名を変えたら合わせて変更する）
 
 ## Git 運用ルール
