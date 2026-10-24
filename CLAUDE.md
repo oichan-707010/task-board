@@ -6,7 +6,7 @@
 
 **task-board** — React + Vite 製のタスク管理ボードアプリケーション。
 
-- `src/App.jsx` — タスクの追加・完了切り替え・削除を行うメインコンポーネント（状態は `useState` で保持、永続化なし）
+- `src/App.jsx` — タスクの追加・完了切り替え・削除を行うメインコンポーネント（タスクは localStorage の `task-board.tasks` に保存）
 - `src/App.css` — ボード UI のスタイル
 - `src/index.css` — 色トークン（ライト/ダーク）とベーススタイル
 
