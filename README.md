@@ -16,3 +16,10 @@ React + Vite で作ったシンプルなタスクボードアプリです。
 npm install
 npm run dev
 ```
+
+## 公開（GitHub Pages）
+
+`main` ブランチへプッシュすると、GitHub Actions（`.github/workflows/deploy.yml`）が自動でビルドし、GitHub Pages に公開します。
+
+- 公開URL: https://oichan-707010.github.io/task-board/
+- 初回のみ、リポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** に設定してください。

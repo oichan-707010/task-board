@@ -17,6 +17,12 @@
 - ビルド: `npm run build`
 - Lint: `npm run lint`（oxlint）
 
+## デプロイ
+
+- `main` へのプッシュで `.github/workflows/deploy.yml` が GitHub Pages に自動デプロイする
+- 公開URL: https://oichan-707010.github.io/task-board/
+- `vite.config.js` の `base` は `/task-board/`（リポジトリ名を変えたら合わせて変更する）
+
 ## Git 運用ルール
 
 ### 基本方針: 変更のたびに GitHub へプッシュする
