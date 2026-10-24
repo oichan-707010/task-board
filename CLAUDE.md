@@ -4,18 +4,18 @@
 
 ## プロジェクト概要
 
-**task-board** — タスク管理ボードアプリケーション。
+**task-board** — React + Vite 製のタスク管理ボードアプリケーション。
 
-> 技術スタック・ディレクトリ構成・開発コマンドは、プロジェクトの実装が進んだら追記してください。
+- `src/App.jsx` — タスクの追加・完了切り替え・削除を行うメインコンポーネント（状態は `useState` で保持、永続化なし）
+- `src/App.css` — ボード UI のスタイル
+- `src/index.css` — 色トークン（ライト/ダーク）とベーススタイル
 
 ## 開発コマンド
 
-<!-- 例:
 - 依存関係のインストール: `npm install`
 - 開発サーバー起動: `npm run dev`
-- テスト: `npm test`
-- Lint: `npm run lint`
--->
+- ビルド: `npm run build`
+- Lint: `npm run lint`（oxlint）
 
 ## Git 運用ルール
 
